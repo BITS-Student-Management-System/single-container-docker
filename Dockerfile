@@ -8,11 +8,15 @@ ADD single-container-docker/supervisord.conf /etc/supervisor/conf.d/supervisord.
 ADD ./service-registry/target/service-registry-0.0.1-SNAPSHOT.jar service-registry-0.0.1-SNAPSHOT.jar
 ADD ./cloud-config-server/target/cloud-config-server-0.0.1-SNAPSHOT.jar cloud-config-server-0.0.1-SNAPSHOT.jar
 ADD ./course-service/target/course-service-0.0.1-SNAPSHOT.jar course-service-0.0.1-SNAPSHOT.jar
+ADD ./department-service/target/department-service-0.0.1-SNAPSHOT.jar department-service-0.0.1-SNAPSHOT.jar
+ADD ./student-service/target/student-service-0.0.1-SNAPSHOT.jar student-service-0.0.1-SNAPSHOT.jar
 ADD ./cloud-gateway/target/cloud-gateway-0.0.1-SNAPSHOT.jar cloud-gateway-0.0.1-SNAPSHOT.jar
 
 EXPOSE 8761
 EXPOSE 9296
 EXPOSE 9003
+EXPOSE 9001
+EXPOSE 9002
 EXPOSE 9191
 CMD ["supervisord", "-c", "/etc/supervisor/conf.d/supervisord.conf"]
 
